@@ -42,4 +42,7 @@ JavaScript学習用　　
 - [Change]　仕様変更（コード・ファイル）
 - [Update]　修正・改善（Fixではない場合）
 - [Upgrade]　更新（パッケージ・ドキュメント）
-- [Revert]　変更取り消し
+- [Revert]　変更取り消し  
+  
+- [Study]  
+※ 個人学習用 教材名番号記載  
