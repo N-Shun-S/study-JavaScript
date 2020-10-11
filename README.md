@@ -10,7 +10,7 @@ JavaScript学習用　　
 ※ 現在の職場環境での動作確認等の場合、var可
 
 *2.関数宣言*
-- アロー関数 const funcAllow = () => {}
+- アロー関数 const funcArrow = () => {}
 - function宣言 function func(){}
 - 関数式 const func = function(){}  
 ※ 上から順に採用
@@ -26,7 +26,8 @@ JavaScript学習用　　
 
 *5.行末セミコロン*
 - 全て入れる
-
+  
+  
 # コミットメッセージのフォーマット
 [Prefix] チケット番号 要約  
 空行  
