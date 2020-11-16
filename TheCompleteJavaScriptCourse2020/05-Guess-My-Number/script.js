@@ -51,22 +51,32 @@ checkBtn.addEventListener("click", function () {
   //When there is no input
   if (!guessNum) {
     message = "⛔️No Number";
-    //When guess is too high
-  } else if (guessNum > correctNum) {
+    //ref ternary operator
+    //When guess is too high or too low
+  } else if (guessNum !== correctNum) {
     if (score > 1) {
-      message = "Too high!";
+      message = guessNum > correctNum ? "Too high!" : "Too low!";
       score--;
     } else {
       message = "😭You lost the game";
     }
-    //When guess is too low
-  } else if (guessNum < correctNum) {
-    if (score > 1) {
-      message = "Too low!";
-      score--;
-    } else {
-      message = "😭You lost the game";
-    }
+
+    // } else if (guessNum > correctNum) {
+    //   if (score > 1) {
+    //     message = "Too high!";
+    //     score--;
+    //   } else {
+    //     message = "😭You lost the game";
+    //   }
+    //   //When guess is too low
+    // } else if (guessNum < correctNum) {
+    //   if (score > 1) {
+    //     message = "Too low!";
+    //     score--;
+    //   } else {
+    //     message = "😭You lost the game";
+    //   }
+
     //When player wins
   } else if (guessNum === correctNum) {
     message = "🎉Correct Number!";
