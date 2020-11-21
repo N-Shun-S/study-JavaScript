@@ -1,21 +1,32 @@
 'use strict';
 
-//button押下
-//modal window 表示
+const btnsOpenModal = document.querySelectorAll('.show-modal');
+const btnCloseModal = document.querySelector('.close-modal');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
 
-const elBtn = document.querySelectorAll('.show-modal');
-const elCloseBtn = document.querySelector('.close-modal');
-const elModal = document.querySelector('.modal');
-const elOverlay = document.querySelector('.overlay');
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
 
 //showmodalボタン押下
-elBtn.forEach(function (el) {
-  el.addEventListener('click', function () {
-    elModal.classList.toggle('hidden');
-  });
+btnsOpenModal.forEach(function (el) {
+  el.addEventListener('click', openModal);
 });
-
 //✖️ボタン押下
-elCloseBtn.addEventListener('click', function () {
-  elModal.classList.toggle('hidden');
+btnCloseModal.addEventListener('click', closeModal);
+
+//オーバーレイ押下
+overlay.addEventListener('click', closeModal);
+
+//escキー押下
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
 });
