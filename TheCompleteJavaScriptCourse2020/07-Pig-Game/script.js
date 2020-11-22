@@ -7,6 +7,14 @@ const btnNew = document.querySelector('.btn--new');
 const dice = document.querySelector('.dice');
 
 //player
+/*
+***Jonas***
+const scores = [0,0];
+let currentScore = 0;
+let activePlayer = 0;
+document.getElementById(`current--${activePlayer}`);
+scores[activePlayer] = 
+*/
 const player = [
   {
     id: 0,
@@ -29,7 +37,7 @@ const player = [
 ];
 
 //「CURRENT点数」を0
-//「アクティブプレイヤー」の変更
+//「アクティブプレイヤー」の変更 Switch to the next player
 //「PLAYERS背景」を変更
 const switchPlayer = function () {
   if (player[0].state === 'active') {
@@ -50,13 +58,14 @@ const switchPlayer = function () {
 let id;
 //「ROLL DICE」ボタン押下
 btnRoll.addEventListener('click', function () {
-  //アクティブプレーヤーの特定
+  //アクティブプレーヤーの特定 let activePlayerにすべきだった
   id = player[0].state === 'active' ? 0 : 1;
 
   //ランダム値の生成
+  //randomDice = Math.trunc(Math.random()*6)+1;
   const minDice = 1;
   const maxDice = 6;
-  let randomDice =
+  const randomDice =
     Math.floor(Math.random() * (maxDice + 1 - minDice)) + minDice;
   //「サイコロ目」変更
   dice.src = `dice-${randomDice}.png`;
@@ -107,7 +116,6 @@ btnNew.addEventListener('click', function () {
       player[id].elPlayer.classList.remove('player--winner');
     }
   });
-
   //ボタン無効化解除
   btnHold.disabled = '';
   btnRoll.disabled = '';
